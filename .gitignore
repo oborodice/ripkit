@@ -1,1 +1,7 @@
 output/
+
+# 実データは個人のCD情報のためコミットしない
+albums/*.json
+!albums/_template.json
+albums/covers/*
+!albums/covers/.gitkeep
