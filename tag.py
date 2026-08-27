@@ -79,7 +79,8 @@ def load_metadata(path: Path) -> AlbumMetadata:
 
 
 def sanitize(name: str) -> str:
-    return name.replace("/", "-")
+    # ":"はFinder上で"/"として表示されてしまう(classic Mac OS時代のパス区切り文字の名残)ため置換する
+    return name.replace("/", "-").replace(":", "-")
 
 
 def set_tags(flac_path: Path, metadata: AlbumMetadata, title: str, track_number: int) -> None:
